@@ -1,6 +1,6 @@
 import s from './CountriesList.module.css';
 
-const CountriesList = () => {
+const CountriesList = ({ countries }) => {
   return (
     <main>
       <table className={s.table}>
@@ -11,13 +11,16 @@ const CountriesList = () => {
             <th className={s.theadRow}>Total Confirmed</th>
           </tr>
         </thead>
+        <tbody className={s.tbody}>
+          {countries.map(({ ID, Country, TotalConfirmed }, index) => (
+            <tr key={ID} className={s.tbodyRow}>
+              <th>{index + 1}</th>
+              <th>{Country}</th>
+              <th>{TotalConfirmed}</th>
+            </tr>
+          ))}
+        </tbody>
       </table>
-      {/* <ol>
-        <li>
-          <h3>Country</h3>
-          <p>quantity</p>
-        </li>
-      </ol> */}
     </main>
   );
 };
