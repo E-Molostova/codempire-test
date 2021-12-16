@@ -2,21 +2,15 @@ import { useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import s from './SearchBar.module.css';
 
-const SearchBar = () => {
-  const [search, setSearch] = useState('');
-
-  const handleInputChange = e => {
-    setSearch(e.target.value);
-  };
-
+const SearchBar = ({ value,onChange }) => {
   return (
     <>
       <form className={s.form}>
         <input
           className={s.input}
           type="text"
-          value={search}
-          onChange={handleInputChange}
+          value={value}
+          onChange={onChange}
           autoComplete="off"
           autoFocus
           placeholder="Search..."
