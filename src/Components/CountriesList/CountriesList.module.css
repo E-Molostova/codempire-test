@@ -27,7 +27,8 @@
 .theadRow:nth-child(2) {
   display: inline-block;
   margin-left: 23px;
-  margin-right: 1051px;
+  margin-right: auto;
+  /* margin-right: 1051px; */
 }
 
 .tbodyRow {
