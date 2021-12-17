@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/codempire-test/static/css/main.ef8d3440.css",
+    "main.js": "/codempire-test/static/js/main.a0c42265.js",
+    "static/media/logo.svg": "/codempire-test/static/media/logo.bbc6527847a7ccdfbb51dc431fa2e988.svg",
+    "static/media/sprite.svg": "/codempire-test/static/media/sprite.75f8a1fdc339a655bde56c08c50a6fb9.svg",
+    "index.html": "/codempire-test/index.html",
+    "main.ef8d3440.css.map": "/codempire-test/static/css/main.ef8d3440.css.map",
+    "main.a0c42265.js.map": "/codempire-test/static/js/main.a0c42265.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef8d3440.css",
+    "static/js/main.a0c42265.js"
+  ]
+}
