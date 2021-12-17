@@ -15,20 +15,10 @@
   line-height: 1.17;
 
   color: #ffffff;
-  padding: 25px;
+  padding-top: 25px;
   margin-bottom: 20px;
   display: flex;
-}
-
-.theadRow:not(:first-child) {
-  border-left: 1px solid #fff;
-}
-
-.theadRow:nth-child(2) {
-  display: inline-block;
-  margin-left: 23px;
-  margin-right: auto;
-  /* margin-right: 1051px; */
+  position: relative;
 }
 
 .tbodyRow {
@@ -43,9 +33,64 @@
   height: 80px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  padding: 25px;
+  padding-top: 25px;
   margin-bottom: 20px;
 }
-.tbodyRow:not(:first-child) {
-  border-left: 1px solid #b2b2b2;
+
+.tbodyRow {
+  display: flex;
+  position: relative;
+}
+
+.theadIndex,
+.tbodyIndex {
+  margin-left: 30px;
+  margin-right: 26px;
+}
+
+.theadCountryName,
+.tbodyCountryName {
+  margin-left: 21px;
+  width: 1160px;
+  text-align: left;
+}
+.theadQuantity,
+.tbodyQuantity {
+  margin-left: 23px;
+}
+.tbodyCountryName::before {
+  content: '';
+  width: 1px;
+  height: 80px;
+  background-color: #b2b2b2;
+  position: absolute;
+  top: 0;
+  left: 78px;
+}
+.tbodyQuantity::before {
+  content: '';
+  width: 1px;
+  height: 80px;
+  background-color: #b2b2b2;
+  position: absolute;
+  top: 0;
+  right: 30%;
+}
+.theadCountryName::before {
+  content: '';
+  width: 1px;
+  height: 80px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 78px;
+}
+.theadQuantity::before {
+  content: '';
+  width: 1px;
+  height: 80px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 30%;
 }

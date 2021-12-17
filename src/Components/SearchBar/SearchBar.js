@@ -1,11 +1,14 @@
-import { useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import s from './SearchBar.module.css';
 
-const SearchBar = ({ value,onChange }) => {
+const SearchBar = ({ value, onChange, onSubmit }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmit(value);
+  };
   return (
     <>
-      <form className={s.form}>
+      <form className={s.form} onSubmit={handleSubmit}>
         <input
           className={s.input}
           type="text"
@@ -15,7 +18,7 @@ const SearchBar = ({ value,onChange }) => {
           autoFocus
           placeholder="Search..."
         />
-        <button type="submit" className={s.btn}>
+        <button type="button" className={s.btn}>
           <svg width="30" height="30">
             <use href={sprite + '#icon-search'}></use>
           </svg>

@@ -6,26 +6,18 @@ const CountriesList = ({ countries, onClick }) => {
       <table className={s.table}>
         <thead>
           <tr className={s.thead}>
-            <th className={s.theadRow}>№</th>
-            <th className={s.theadRow}>Country</th>
-            <th className={s.theadRow}>Total Confirmed</th>
+            <th className={s.theadIndex}>№</th>
+            <th className={s.theadCountryName}>Country</th>
+            <th className={s.theadQuantity}>Total Confirmed</th>
           </tr>
         </thead>
 
         <tbody className={s.tbody}>
-          {/* {countries.map((country, index) => (
-            <tr onClick={onClick} key={country.ID} className={s.tbodyRow} country={country}>
-              <th>{index + 1}</th>
-              <th>{country.Country}</th>
-              <th>{country.TotalConfirmed}</th>
-            </tr>
-          ))} */}
-
           {countries.map(({ ID, Country, TotalConfirmed }, index) => (
-            <tr onClick={onClick} key={ID} className={s.tbodyRow}>
-              <th>{index + 1}</th>
-              <th>{Country}</th>
-              <th>{TotalConfirmed}</th>
+            <tr onClick={() => onClick(ID)} key={ID} className={s.tbodyRow}>
+              <th className={s.tbodyIndex}>{index + 1}</th>
+              <th className={s.tbodyCountryName}>{Country}</th>
+              <th className={s.tbodyQuantity}>{TotalConfirmed}</th>
             </tr>
           ))}
         </tbody>

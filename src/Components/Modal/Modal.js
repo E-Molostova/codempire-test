@@ -4,7 +4,7 @@ import s from './Modal.module.css';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ children, onClose, onClick }) => {
+const Modal = ({ children, onClose }) => {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {

@@ -1,0 +1,47 @@
+.section {
+  padding: 25px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #666666;
+}
+
+.title {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 38px;
+  color: var(--font-primary);
+}
+.infoRow {
+  display: flex;
+  margin-bottom: 48px;
+}
+.infoRow:last-child {
+  margin-bottom: 36px;
+}
+
+.text {
+  font-weight: 400;
+  margin-left: 30px;
+}
+
+.quantity {
+  margin-left: auto;
+}
+
+.btn {
+  width: 171px;
+  height: 49px;
+  color: #fff;
+  background: #2196f3;
+  border-radius: 20px;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

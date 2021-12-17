@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-
-import Container from './Components/Container';
-import Header from './Components/Header';
-import CountriesList from './Components/CountriesList';
-import CountryDetails from './Components/CountryDetails';
-import Modal from './Components/Modal';
-
-import fetchCountries from './services/api-services';
+import Container from './Container';
+import Header from './Header';
+import CountriesList from './CountriesList';
+import CountryDetails from './CountryDetails';
+import Modal from './Modal';
+import fetchCountries from '../services/api-services';
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -29,21 +27,25 @@ const App = () => {
     setShowModal(prevModal => !prevModal);
   };
 
-  const handleOpenDetails = e => {
-    console.log(e);
-    setCountryDetails(e.target);
-
+  const handleOpenDetails = id => {
+    const findCountryById = id => countries.filter(country => country.ID === id);
+    const country = findCountryById(id);
+    setCountryDetails(country);
     toggleModal();
+  };
+
+  const handleFormSubmit = searchQuery => {
+    setFilter(searchQuery);
   };
 
   return (
     <>
       <Container>
-        <Header value={filter} onChange={setFilterCountries} />
+        <Header value={filter} onChange={setFilterCountries} onSubmit={handleFormSubmit} />
         {!error && <CountriesList countries={filteredCountries()} onClick={handleOpenDetails} />}
         {showModal && (
           <Modal onClose={toggleModal}>
-            <CountryDetails countryDetails={countryDetails} />
+            <CountryDetails countryDetails={countryDetails} onClose={toggleModal} />
           </Modal>
         )}
       </Container>
